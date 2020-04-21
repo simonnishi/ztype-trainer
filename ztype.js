@@ -5387,6 +5387,7 @@ ig.module('game.main').requires('impact.game', 'impact.font', 'game.menus.about'
             this.shoot(letter);
         },
         shoot: function(letter) {
+            speechSynthesis.cancel();
             speechSynthesis.speak(new SpeechSynthesisUtterance(letter));
             this.idleTimer.reset();
             if (!this.currentTarget) {
